@@ -79,5 +79,6 @@ After completing the above, you may still be curious about how to use this graph
 You can open Settings, Display, Graphics, add an application, and then edit it to specify P40 to run a specific .exe application.
 
 The following will use Stable Diffusion WebUI as an example:
+
 ![setting1](image/setting.png)
 ![setting2](image/setting2.png)

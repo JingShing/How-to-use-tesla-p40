@@ -34,3 +34,50 @@ The hardware that the author prepared includes a 1200w Corsair power supply, a G
   ![twin_card](image/twin_card.jpg)
 
 Regarding the system, it is recommended to use at least Windows 10 or a newer version. The author uses the latest version of Windows 11.
+
+Before starting, it is necessary to change the BIOS settings to enable the detection of multiple graphics cards, otherwise the motherboard will give an error message.
+
+### BIOS Settings
+Before installing the P40, please remember to modify the BIOS settings:
+
+* Enable Above 4G memory
+    * This option enables the motherboard to detect multiple graphics cards.
+* Disable CSM
+    * If not disabled, the Nvidia graphics card selection will give an error message.
+After setting, please remember to save and shut down.
+## Installing P40
+Please install the P40 in the graphics card slot, and then try to enter the system. If you can enter the system, please proceed to the next step. If you cannot enter the system, please:
+
+1. Check if the motherboard supports multiple graphics cards or Nvidia graphics cards.
+2. Check if there is any problem with the power supply. The adapter should be two 6+2 pin connectors totaling 16 pins to 8 pins.
+3. Check if the slot is properly inserted.
+If the above cannot solve your problem, you can raise it in Issues and let us help you figure it out.
+
+After entering the system
+Please note that the following is an example using the Windows system, and this article is based on Win11 as the testing environment.
+
+You may need to install Nvidia drivers. Here, the advantage of using the 1080ti is already evident. Because the P40 and 1090 use equal chips and architecture, the drivers can be interchanged. Of course, you can choose to install the studio version of the 1080 or Titan driver.
+
+After installing the driver, you may notice that the Tesla P40 graphics card is not detected in the Task Manager. Therefore, you need to modify the registry.
+
+Please press ```WIN + R``` to open the Run window, and then enter ```HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0001 ```to modify its content.
+* Modify AdapterType to 1
+* Modify FeatureScore to d1
+Add Dword:
+* Fill in 1 for EnableMsHybrid
+* Fill in 7 for GridLicensedFeatures
+
+![regit](image/regit.png)
+
+After modifying the registry, you can choose to restart or disable and enable P40 in the device manager to see that P40 has been successfully called in the Task Manager.
+
+![task_manager](image/task_manage.png)
+
+## How to use the P40 graphics card?
+After completing the above, you may still be curious about how to use this graphics card.
+
+You can open Settings, Display, Graphics, add an application, and then edit it to specify P40 to run a specific .exe application.
+
+The following will use Stable Diffusion WebUI as an example:
+![setting1](image/setting.png)
+![setting2](image/setting2.png)

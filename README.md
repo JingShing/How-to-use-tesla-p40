@@ -63,7 +63,9 @@ After installing the driver, you may notice that the Tesla P40 graphics card is 
 Please press ```WIN + R``` to open the Run window, and then enter ```HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0001 ```to modify its content.
 * Modify AdapterType to 1
 * Modify FeatureScore to d1
+
 Add Dword:
+
 * Fill in 1 for EnableMsHybrid
 * Fill in 7 for GridLicensedFeatures
 

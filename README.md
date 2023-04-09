@@ -60,7 +60,7 @@ You may need to install Nvidia drivers. Here, the advantage of using the 1080ti 
 
 After installing the driver, you may notice that the Tesla P40 graphics card is not detected in the Task Manager. Therefore, you need to modify the registry.
 
-Please press ```WIN + R``` to open the Run window, and then enter ```HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0001 ```to modify its content.
+Please press ```WIN + R``` to open the Run window, then enter ```regedit``` to get into register table, and then enter ```HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0001 ``` in path to modify its content.
 * Modify AdapterType to 1
 * Modify FeatureScore to d1
 

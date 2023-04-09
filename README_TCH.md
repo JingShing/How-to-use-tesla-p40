@@ -59,7 +59,8 @@
 
 安裝好驅動後，可以注意到工作管理員並沒有讀取到 tesla p40 顯卡。所以接下來需要更改註冊表
 
-請按 ```WIN + R``` 開啟執行，然後輸入 ```HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0001``` 更改其中的內容。
+請按 ```WIN + R``` 輸入```regedit```開啟註冊表，然後輸入 ```HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Class\{4d36e968-e325-11ce-bfc1-08002be10318}\0001``` 更改其中的內容。
+> 備註，可能不是 0001，也可能是其他數字，可以透過 ```DriverDesc```　來判斷
 * ```AdapterType``` 修改成 1
 * ```FeatureScore``` 修改成 d1
 新增 Dword:
